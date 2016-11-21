@@ -49,7 +49,7 @@ Run the `getwords.py` as follows:
 python getwords.py
 ```
 
-Insert a username and password for a **logged in** Google Account (but
+Insert a username (with domain, e.g., `me@gmail.com`) and password for a **logged in** Google Account (but
 you probably want to avoid using an account you care about).
 
 # Getting the results

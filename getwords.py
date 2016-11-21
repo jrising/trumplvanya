@@ -21,14 +21,17 @@ with open("wordfreqs.csv", 'r') as fp:
                 words.append(row[0])
 
 print "Words to check: ", len(words)
-username = input("Google Username:")
-password = input("Google Password:")
-pytrends = login(username, password)
+username = raw_input("Google Username: ")
+password = raw_input("Google Password: ")
+pytrends = trendlib.login(username, password)
 
 while True:
-    word = random.choice(pytrends, words)
+    word = random.choice(words)
     try:
-        corr = collect.get_correl(word)
+        corr = trendlib.get_correl(pytrends, word)
+    except KeyboardInterrupt:
+        print "Done."
+        exit()
     except:
         print "Skipping", word
         continue
